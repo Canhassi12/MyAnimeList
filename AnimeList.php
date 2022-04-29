@@ -17,15 +17,20 @@ class AnimeList {
         data($sql);
     }
 
-    // public function edit() : void
-    // {
-    //     $sql = "update "
+    public function edit() : void
+    {
         
-    //     data($sql);
-    // }
+    }
+
+    public function showAll()
+    { 
+       $sql = "SELECT * from anime";
+
+       dataShow($sql);
+    }
 
     public function delete() : void
     {
-
+        
     }
 }

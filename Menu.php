@@ -12,7 +12,8 @@ class Menu {
             -> Choose an option:
                 1-  Add new anime
                 2-  Edit an anime
-                3-  Exit program
+                3-  Show all
+                4-  Exit program\n
         EOL;
         
         $userInput = trim(fgets(STDIN));
@@ -26,9 +27,12 @@ class Menu {
 
         match ($userInput) {
             1       => $animeList->insert(),
-            // 2       => $animeList->edit(),
-            3       => $animeList->delete(),
+            2       => $animeList->edit(),
+            3       =>$animeList->showAll(),
+            4       => $animeList->delete(),
             // default => $this->displayDefault(),
         };
     }
 }
+
+
