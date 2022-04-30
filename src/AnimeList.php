@@ -20,9 +20,9 @@ class AnimeList {
     public function insert() : void
     {
         echo "Name: " . PHP_EOL;
-        $name = fgets(STDIN);
+        $name = trim(fgets(STDIN));
         echo "Score: " . PHP_EOL;
-        $score = fgets(STDIN);  
+        $score = trim(fgets(STDIN));  
         new Anime($name, $score);
 
         $sql = "INSERT INTO anime (Name, Score)
@@ -34,11 +34,11 @@ class AnimeList {
     public function edit() : void
     {
         echo "Write an anime ID if you want to editing anime" . PHP_EOL;
-        $ID = fgets(STDIN);
+        $ID = trim(fgets(STDIN));
         echo "Write the Name:" . PHP_EOL;
-        $newName = fgets(STDIN);
+        $newName = trim(fgets(STDIN));
         echo "Write the Score:" . PHP_EOL;
-        $newScore = fgets(STDIN);
+        $newScore = trim(fgets(STDIN));
 
         $sql = "UPDATE anime set Name = '$newName', Score = $newScore where AnimeID = $ID";
 
@@ -55,14 +55,14 @@ class AnimeList {
     public function delete() : void
     {
         echo "Write an animeID if you want to DELETING anime" . PHP_EOL;
-        $ID = fgets(STDIN);
+        $ID = trim(fgets(STDIN));
 
         echo "Do you sure want DELETE?" . PHP_EOL;
-        $confirm = fgets(STDIN);
+        $confirm = strtolower(trim(fgets(STDIN)));
+    
+        if ($confirm == 'n') {
 
-        if($confirm == 'n' || $confirm == 'N') {
-
-            exit();
+            $this->exit();
         }
         else 
         {
