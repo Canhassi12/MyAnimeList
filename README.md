@@ -1,6 +1,8 @@
 # MyAnimeList
 
-System to save animes I watched.
+## Objective
+I always needed to write down which animes I watched, to remember in the future, and I decided to make a project that could save my animes. In this project i has used just PHP.
+
 
 in CLI, we can add, edit, delete, and show all anime from the list.
 
